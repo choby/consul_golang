@@ -3,7 +3,7 @@ package test
 import (
 	"fmt"
 
-	"github.com/choby/consul_go/registry"
+	"github.com/choby/consul_go/consul/registry"
 	"github.com/choby/consul_go/util"
 	"github.com/gin-gonic/gin"
 
@@ -27,8 +27,12 @@ func TestConsulServiceRegistry(t *testing.T) {
 	fmt.Println(ip)
 	rand.Seed(time.Now().UnixNano())
 
-	si, _ := registry.NewDefaultServiceInstance("go-user-server", "", 8010,
-		false, map[string]string{"user": "zyn2"}, "")
+	si, _ := registry.NewDefaultServiceInstance("go-user-server",
+		"",
+		8010,
+		false,
+		map[string]string{"user": "zyn2"},
+		"")
 
 	registryDiscoveryClient.Register(si)
 

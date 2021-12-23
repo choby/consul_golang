@@ -11,7 +11,7 @@ import (
 )
 
 /*
-* 服务注册
+* 服务中心
  */
 type consulServiceRegistry struct {
 	serviceInstances     map[string]map[string]ServiceInstance
